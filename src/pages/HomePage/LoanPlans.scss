@@ -1,0 +1,62 @@
+/* Main container for the cards */
+.loan-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  /* Each loan card */
+  .loan-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    height: 270px;
+  }
+  
+  .loan-item{
+    padding-top: 20px;
+  }
+
+  /* Hover effect */
+  .loan-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Loan icons */
+  .loan-icon {
+    width: 60px;
+    height: auto;
+    margin-bottom: 15px;
+  }
+  
+  /* Loan titles */
+  .loan-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  /* Loan descriptions */
+  .loan-description {
+    font-size: 14px;
+    color: #6c757d;
+    margin-bottom: 15px;
+  }
+  
+  /* Loan links */
+  .loan-link {
+    text-decoration: none;
+    font-weight: bold;
+    color: #007bff;
+    display: inline-block;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  .loan-link:hover {
+    color: #0056b3;
+  }
+  

@@ -33,39 +33,64 @@
 // export default NavBar;
 
 
-import React from "react";
-import { Row, Col, Button } from "reactstrap";
+import React, { useState } from "react";
+import { Container, Row, Col, Button } from "reactstrap";
+import { FaBars, FaTimes } from "react-icons/fa";
+import "./NavBar.scss";
 
 const NavBar = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
-    <>
-      <Row className="d-flex align-items-center justify-content-between"  style={{background:"#5665B0", marginLeft:"2px", marginRight:"2px",height:"60px"}} >
-        {/* Logo on the left */}
-        <Col md={2} className="d-flex align-items-center">
-          <img
-            src={`${process.env.PUBLIC_URL}/assets/Images/HomeCardsImages/FairNetLogoHead.svg`}
-            alt="Logo"
-            height="40px"
-            width="200px"
-          />
-        </Col>
+    <nav className="navbar-container">
+      <Container>
+        <Row className="align-items-center justify-content-between">
+          {/* Left - Logo */}
+          <Col xs={6} md={3} className="d-flex align-items-center">
+            <img
+              src={`${process.env.PUBLIC_URL}/assets/Images/HomeCardsImages/FairNetLogoHead.svg`}
+              alt="Logo"
+              className="logo"
+            />
+          </Col>
 
-        {/* Center navigation options */}
-        <Col md={5} className="d-flex justify-content-evenly">
-          <Col md="auto" className="text-center">Home</Col>
-          <Col md="auto" className="text-center">About Us</Col>
-          <Col md="auto" className="text-center">Product</Col>
-          <Col md="auto" className="text-center">Contact</Col>
-          <Col md="auto" className="text-center">FAQ</Col>
-        </Col>
+          {/* Center - Navigation (Hidden on mobile) */}
+          <Col md={6} className="d-none d-md-flex justify-content-center gap-3">
+            <span className="nav-link">Home</span>
+            <span className="nav-link">About Us</span>
+            <span className="nav-link">Product</span>
+            <span className="nav-link">Contact</span>
+            <span className="nav-link">FAQ</span>
+          </Col>
 
-        {/* Buttons on the right */}
-        <Col md={3} className="d-flex justify-content-end">
-          <Button color="" className="me-2">LogIn</Button>
-          <Button color="success" className="rounded-4">Register</Button>
-        </Col>
-      </Row>
-    </>
+          {/* Right - Buttons & Hamburger */}
+          <Col xs={6} md={3} className="d-flex justify-content-end">
+            <div className="d-none d-md-block">
+              <Button color="light" className="me-2 px-3">Log In</Button>
+              <Button color="success" className="px-3 rounded-4">Register</Button>
+            </div>
+
+            {/* Hamburger Menu for Mobile */}
+            <div className="d-md-none">
+              <Button className="menu-button" onClick={() => setMenuOpen(!menuOpen)}>
+                {menuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
+              </Button>
+            </div>
+          </Col>
+        </Row>
+
+        {/* Mobile Menu - Opens on Click */}
+        <div className={`mobile-menu ${menuOpen ? "open" : ""}`}>
+          <span className="mobile-link">Home</span>
+          <span className="mobile-link">About Us</span>
+          <span className="mobile-link">Product</span>
+          <span className="mobile-link">Contact</span>
+          <span className="mobile-link">FAQ</span>
+          <Button color="light" className="mt-3 w-100">Log In</Button>
+          <Button color="success" className="mt-2 w-100">Register</Button>
+        </div>
+      </Container>
+    </nav>
   );
 };
 

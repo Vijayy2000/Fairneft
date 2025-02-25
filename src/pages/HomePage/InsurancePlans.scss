@@ -1,0 +1,57 @@
+/* Main container for the insurance cards */
+.insurance-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  /* Each insurance card */
+  .insurance-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    height: 270px;
+  }
+  
+  .insurance-item {
+    padding-top: 20px;
+  }
+  
+  /* Hover effect */
+  .insurance-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Insurance icons */
+  .insurance-icon {
+    width: 60px;
+    height: auto;
+    margin-bottom: 15px;
+  }
+  
+  /* Insurance titles */
+  .insurance-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  /* Insurance descriptions */
+  .insurance-description {
+    font-size: 14px;
+    color: #6c757d;
+    margin-bottom: 15px;
+  }
+  
+  /* Insurance prices */
+  .insurance-price {
+    font-size: 16px;
+    font-weight: bold;
+    color: #007bff;
+    display: block;
+  }
+  

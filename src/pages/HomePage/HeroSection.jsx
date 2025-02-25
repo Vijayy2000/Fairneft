@@ -1,62 +1,46 @@
 import React from "react";
-import { Row, Col } from "reactstrap";
+import { Row, Col, Container } from "reactstrap";
 
 const HeroSection = () => {
   return (
-    <>
-      <Row className="d-flex flex-row justify-content-  mx-3" >
-        <Col md={4}>
-          <Row>
-            <Col  className="fs-4 fw-bold my-2">
-              Your Trusted{" "}
-              <span style={{ color: "#77C476" }}>Financial Companion</span> –
-              Tailored Solutions, Simplified
-            </Col>
+    <Container className="py-5">
+      <Row className="d-flex align-items-center justify-content-center text-center text-md-start">
+        {/* Left Content Section */}
+        <Col md={6} className="px-4">
+          <h2 className="fs-3 fw-bold">
+            Your Trusted{" "}
+            <span style={{ color: "#77C476" }}>Financial Companion</span> – Tailored Solutions, Simplified
+          </h2>
+          <p className="text-muted">
+            Find the perfect loan solutions designed for your needs. Empower your financial future with Fairnet’s trusted support.
+          </p>
 
-            <Row>
-              <Col  className="text-muted my-2">
-                Find the perfect loan solutions designed for your needs. Empower
-                your financial future with Fairnet’s trusted support.
-              </Col>
-            </Row>
-
-            <Row className="my-2">
-              <Col>
-                <img
-                  src={`${process.env.PUBLIC_URL}/assets/Images/HomeCardsImages/TickMark.svg`}
-                  alt="tick mark"
-                />
-                <span>Personalized Recommendations</span>
-              </Col>
-            </Row>
-
-            <Row className="my-2">
-              <Col>
-                <img
-                  src={`${process.env.PUBLIC_URL}/assets/Images/HomeCardsImages/TickMark.svg`}
-                  alt="tick mark"
-                />
-                <span>Wide Range of Financial Products</span>
-              </Col>
-            </Row>
-
-            <Row className="my-2">
-              <Col>
-                <img
-                  src={`${process.env.PUBLIC_URL}/assets/Images/HomeCardsImages/TickMark.svg`}
-                  alt="tick mark"
-                />
-                <span>Quick, Hassle-Free Approvals</span>
-              </Col>
-            </Row>
-          </Row>
+          {/* Features List */}
+          <div className="d-flex align-items-center gap-2 my-2">
+            <img src={`${process.env.PUBLIC_URL}/assets/Images/HomeCardsImages/TickMark.svg`} alt="tick mark" />
+            <span>Personalized Recommendations</span>
+          </div>
+          <div className="d-flex align-items-center gap-2 my-2">
+            <img src={`${process.env.PUBLIC_URL}/assets/Images/HomeCardsImages/TickMark.svg`} alt="tick mark" />
+            <span>Wide Range of Financial Products</span>
+          </div>
+          <div className="d-flex align-items-center gap-2 my-2">
+            <img src={`${process.env.PUBLIC_URL}/assets/Images/HomeCardsImages/TickMark.svg`} alt="tick mark" />
+            <span>Quick, Hassle-Free Approvals</span>
+          </div>
         </Col>
-        <Col md={4} className="px-2">
-        <img src={`${process.env.PUBLIC_URL}/assets/Images/HomeCardsImages/HeroSectionImage.svg`} alt ="hero"/>
-        
+
+        {/* Right Image Section */}
+        <Col md={6} className="d-flex justify-content-center">
+          <img
+            src={`${process.env.PUBLIC_URL}/assets/Images/HomeCardsImages/HeroSectionImage.svg`}
+            alt="hero"
+            className="img-fluid"
+            style={{ maxWidth: "100%", height: "auto" }}
+          />
         </Col>
       </Row>
-    </>
+    </Container>
   );
 };
 

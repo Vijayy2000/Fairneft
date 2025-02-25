@@ -1,86 +1,95 @@
-import React from 'react'
-import {Col,Row} from "reactstrap"
-import HomePageCards from '../../components/HomePageCards/HomePageCards'
+import React from "react";
+import { Container, Row, Col } from "reactstrap";
+import "./LoanPlans.scss"; 
+
+
+const loanPlans = [
+  {
+    image: "/assets/Images/HomeCardsImages/PersonalLoan.svg",
+    title: "Personal Loan",
+    description: "Select the best offer curated just for you from a wide choice of banks and NBFC’s",
+    link: "Check Eligibility",
+  },
+  {
+    image: "/assets/Images/HomeCardsImages/BussinessLoan.svg",
+    title: "Business Loans (Secured & Unsecured)",
+    description: "Expand your business with loans at low interest rates",
+    link: "Check Eligibility",
+  },
+  {
+    image: "/assets/Images/HomeCardsImages/OverDraft.svg",
+    title: "Overdraft",
+    description: "Get instant access to extra funds with an overdraft facility, allowing you to borrow as needed up to a pre-approved limit.",
+    link: "Learn More",
+  },
+  {
+    image: "/assets/Images/HomeCardsImages/HomeLoan.svg",
+    title: "Home Loan",
+    description: "Choose from lowest interest rates available for your dream home",
+    link: "Check Eligibility",
+  },
+  {
+    image: "/assets/Images/HomeCardsImages/LoanAganistProperty.svg",
+    title: "Loan Against Property",
+    description: "Get liquidity against your property at best interest rates",
+    link: "Check Eligibility",
+  },
+  {
+    image: "/assets/Images/HomeCardsImages/ProfessionalLoan.svg",
+    title: "Professional Loans",
+    description: "Empower your career with a Professional Loan - tailored financial support for doctors, lawyers, and self-employed professionals",
+    link: "Check Eligibility",
+  },
+  {
+    image: "/assets/Images/HomeCardsImages/EducationalLoan.svg",
+    title: "Education Loans",
+    description: "Invest in your future with an Education Loan - flexible funding for tuition, books, and living expenses",
+    link: "Check Eligibility",
+  },
+  {
+    image: "/assets/Images/HomeCardsImages/machineryLoan.svg",
+    title: "Machinery Loans",
+    description: "Upgrade your business with a Machinery Loan - easy financing for new equipment and technology.",
+    link: "Check Eligibility",
+  },
+  {
+    image: "/assets/Images/HomeCardsImages/VechileLoan.svg",
+    title: "Vehicle Loans",
+    description: "Drive your dreams with a Vehicle Loan—affordable financing for cars, bikes, and commercial vehicles",
+    link: "Check Eligibility",
+  },
+];
 
 const LoanPlans = () => {
-
-    const SumamryCards = [
-        {
-            image: `${process.env.PUBLIC_URL}/assets/Images/HomeCardsImages/PersonalLoan.svg`,
-            title: 'Personal Loan',
-            description: 'Select the best offer curated just for you from a wide choice of banks and NBFC’s',
-            price: 'Check Eligibility*',
-          },
-          {
-            image: `${process.env.PUBLIC_URL}/assets/Images/HomeCardsImages/BussinessLoan.svg`,
-            title: 'Business Loans (Secured & Unsecured)',
-            description: 'Expand your business with loans at low interest rates ',
-            price: 'Check Eligibility*',
-          },
-          {
-            image: `${process.env.PUBLIC_URL}/assets/Images/HomeCardsImages/OverDraft.svg`,
-            title: 'Overdraft',
-            description: 'Get instant access to extra funds with an overdraft facility, allowing you to borrow as needed up to a pre-approved limit.',
-            price: 'Check Eligibility*',
-           
-          },
-          {
-            image: `${process.env.PUBLIC_URL}/assets/Images/HomeCardsImages/HomeLoan.svg`,
-            title: 'Home Loan',
-            description: 'Choose from lowest interest rates available from your dream home',
-            price: 'Check Eligibility*',
-          },
-          {
-            image: `${process.env.PUBLIC_URL}/assets/Images/HomeCardsImages/LoanAganistProperty.svg`,
-            title: 'Loan Aganist Property',
-            description: 'Get liquidity against your property at best interest rates',
-            price: 'Check Eligibility*',
-          },
-          {
-            image: `${process.env.PUBLIC_URL}/assets/Images/HomeCardsImages/ProfessionalLoan.svg`,
-            title: 'Professional Loan',
-            description: 'Empower your career with a Professional Loan - tailored financial support for doctors, lawyers, and self-employed professionals',
-            price: 'Check Eligibility*',
-          },
-          {
-            image: `${process.env.PUBLIC_URL}/assets/Images/HomeCardsImages/EducationalLoan.svg`,
-            title: 'Educational Loan',
-            description: 'Invest in your future with an Education Loan - flexible funding for tuition, books, and living expenses',
-            price: 'Check Eligibility*',
-          },
-          {
-            image: `${process.env.PUBLIC_URL}/assets/Images/HomeCardsImages/VechileLoan.svg`,
-            title: 'Vechile Loan',
-            description: 'Drive your dreams with a Vehicle Loan—affordable financing for cars, bikes, and commercial vehicles',
-            price: 'Check Eligibility*',
-          },
-          {
-            image: `${process.env.PUBLIC_URL}/assets/Images/HomeCardsImages/machineryLoan.svg`,
-            title: 'Machinery Loan',
-            description: 'Upgrade your business with a Machinery Loan - easy financing for new equipment and technology.',
-            price: 'Check Eligibility*',
-          },
-          
-    ]
   return (
-   <>
+    <Container>
+      <Row className="text-left my-4">
+        <Col>
+          <h2 className="fw-bold">
+            Find the Perfect <span style={{ color: "#77C476" }}>Credit Solution</span> for Every Need
+          </h2>
+          <p className="text-muted">
+            From personal loans to home loans, we’ve got you covered. Explore tailored credit options with ease and transparency.
+          </p>
+        </Col>
+      </Row>
 
-   <Row className='mx-3'>
-    <Col md={4} className='fs-4 fw-bold'>Find the Perfect <span style={{color:"#77C476"}}>Credit Solution</span> for Every Need</Col>
-   </Row>
-   <Col md={5} className='text-muted mx-5'>From personal loans to home loans, we’ve got you covered. Explore tailored credit options with ease and transparency</Col>
+      <Row className="loan-container">
+        {loanPlans.map((loan, index) => (
+          <Col key={index} xs="12" sm="6" md="6" lg="4" className="loan-item">
+            <div className="loan-card">
+              <img src={loan.image} alt={loan.title} className="loan-icon" />
+              <h5 className="loan-title">{loan.title}</h5>
+              <p className="loan-description">{loan.description}</p>
+              <a href="#" className="loan-link">
+                {loan.link} →
+              </a>
+            </div>
+          </Col>
+        ))}
+      </Row>
+    </Container>
+  );
+};
 
-   <Row className='mx-3'>
-
-    <Col md = {12} style={{margin:"auto"}}>
-    <HomePageCards data={SumamryCards}/>
-    
-    </Col>
-   </Row>
-  
-   
-   </>
-  )
-}
-
-export default LoanPlans
+export default LoanPlans;

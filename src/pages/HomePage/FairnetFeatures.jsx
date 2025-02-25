@@ -3,88 +3,69 @@ import { Row, Col } from "reactstrap";
 
 const FairnetFeatures = () => {
   return (
-    <>
-      <Row className="d-flex flex-row justify-content-between my-3 mx-3">
-        <Col md={4} >
-          <Col className="fs-3 text-dark fw-bold">
+    
+    <div className="container py-4">
+      <Row className="justify-content-center text-left text-md-start" >
+        {/* Left Section */}
+        <Col lg={4} md={12} className="mb-4">
+          <h3 className="fw-bold text-dark">
             Empowering Your Financial Journey with{" "}
-            <span style={{ color: "#77C476" }}>Trust, Transparency</span> , and{" "}
+            <span style={{ color: "#77C476" }}>Trust, Transparency</span>, and{" "}
             <span style={{ color: "#77C476" }}>Tailored</span> Solutions
-          </Col>
-          <Col className="text-gray" style={{ color: "grey" }}>
-            At Fairnet we believe in simplifying your financial decisions and
+          </h3>
+          <p className="text-gray" style={{ color: "grey" }}>
+            At Fairnet, we believe in simplifying your financial decisions and
             providing solutions that truly matter. Here’s why you can trust us:
-          </Col>
-          
+          </p>
         </Col>
-       
 
-        <Col md={7}>
-          <Row>
-            <Col md={5} className="fw-bold" style={{ color: "#5665B0" }}>
-              Tailored Solutions
-            </Col>
-            <Col md={5}>
-              Whether you're investing, insuring, or borrowing, we offer
-              personalized options that align with your unique needs and goals.
-            </Col>
-            <hr style={{color:"#ACD1F4", borderWidth:"2px"}}/>
-          </Row>
-
-          <Row>
-            <Col md={5} className="fw-bold" style={{ color: "#5665B0" }}>
-              Trusted Partners
-            </Col>
-            <Col md={5}>
-              Partnered with leading financial institutions and insurers,
-              ensuring you get the best products and services in the market
-            </Col>
-            <hr style={{color:"#ACD1F4", borderWidth:"2px"}}/>
-          </Row>
-          <Row>
-            <Col md={5} className="fw-bold" style={{ color: "#5665B0" }}>
-              Transparency Guaranteed
-            </Col>
-            <Col md={5}>
-              No hidden fees or surprises. Enjoy a clear, straightforward
-              process for all your financial needs.
-            </Col>
-            <hr style={{color:"#ACD1F4", borderWidth:"2px"}}/>
-          </Row>
-          <Row>
-            <Col md={5} className="fw-bold" style={{ color: "#5665B0" }}>
-              Expert Guidance
-            </Col>
-            <Col md={5}>
-              Our team of experts is here to guide you at every step, from
-              choosing the right product to managing your finances efficiently
-            </Col>
-            <hr style={{color:"#ACD1F4", borderWidth:"2px"}}/>
-          </Row>
-          <Row>
-            <Col md={5} className="fw-bold" style={{ color: "#5665B0" }}>
-              Seamless Experience
-            </Col>
-            <Col md={5}>
-              With an intuitive platform and quick processing, we make managing
-              your finances easy, accessible, and stress-free
-            </Col>
-            <hr style={{color:"#ACD1F4", borderWidth:"2px"}}/>
-          </Row>
-
-          <Row>
-            <Col md={5} className="fw-bold" style={{ color: "#5665B0" }}>
-              Customer-Centric Approach
-            </Col>
-            <Col md={5}>
-              Your satisfaction is our priority. We’re dedicated to delivering
-              excellent service and unparalleled support
-            </Col>
-            <hr style={{color:"#ACD1F4", borderWidth:"2px"}}/>
-          </Row>
+        {/* Right Section */}
+        <Col lg={7} md={12}>
+          {[
+            {
+              title: "Tailored Solutions",
+              description:
+                "Whether you're investing, insuring, or borrowing, we offer personalized options that align with your unique needs and goals.",
+            },
+            {
+              title: "Trusted Partners",
+              description:
+                "Partnered with leading financial institutions and insurers, ensuring you get the best products and services in the market.",
+            },
+            {
+              title: "Transparency Guaranteed",
+              description:
+                "No hidden fees or surprises. Enjoy a clear, straightforward process for all your financial needs.",
+            },
+            {
+              title: "Expert Guidance",
+              description:
+                "Our team of experts is here to guide you at every step, from choosing the right product to managing your finances efficiently.",
+            },
+            {
+              title: "Seamless Experience",
+              description:
+                "With an intuitive platform and quick processing, we make managing your finances easy, accessible, and stress-free.",
+            },
+            {
+              title: "Customer-Centric Approach",
+              description:
+                "Your satisfaction is our priority. We’re dedicated to delivering excellent service and unparalleled support.",
+            },
+          ].map((feature, index) => (
+            <Row key={index} className="align-items-center">
+              <Col md={5} sm={12} className="fw-bold" style={{ color: "#5665B0" }}>
+                {feature.title}
+              </Col>
+              <Col md={7} sm={12}>
+                {feature.description}
+              </Col>
+              <hr className="d-md-block d-none" style={{ color: "#ACD1F4", borderWidth: "2px" }} />
+            </Row>
+          ))}
         </Col>
       </Row>
-    </>
+    </div>
   );
 };
 
