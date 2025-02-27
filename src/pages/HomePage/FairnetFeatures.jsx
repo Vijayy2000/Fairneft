@@ -3,8 +3,8 @@ import { Row, Col } from "reactstrap";
 
 const FairnetFeatures = () => {
   return (
-    
-    <div className="container py-4">
+    <div style={{background:"aliceblue"}}>
+    <div className="container py-4 mt-5">
       <Row className="justify-content-center text-left text-md-start" >
         {/* Left Section */}
         <Col lg={4} md={12} className="mb-4">
@@ -14,7 +14,7 @@ const FairnetFeatures = () => {
             <span style={{ color: "#77C476" }}>Tailored</span> Solutions
           </h3>
           <p className="text-gray" style={{ color: "grey" }}>
-            At Fairnet, we believe in simplifying your financial decisions and
+            At FairNeft, we believe in simplifying your financial decisions and
             providing solutions that truly matter. Here’s why you can trust us:
           </p>
         </Col>
@@ -60,11 +60,12 @@ const FairnetFeatures = () => {
               <Col md={7} sm={12}>
                 {feature.description}
               </Col>
-              <hr className="d-md-block d-none" style={{ color: "#ACD1F4", borderWidth: "2px" }} />
+              <hr className="d-md-block " style={{ color: "#ACD1F4", borderWidth: "2px" }} />
             </Row>
           ))}
         </Col>
       </Row>
+    </div>
     </div>
   );
 };

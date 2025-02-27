@@ -3,8 +3,9 @@
     background-image: url(../../assets/Images/HomePage/background.svg);
     background-size: cover;
     background-position: center;
+    margin-top: 3em;
     /* background-repeat: no-repeat; */
-    min-height: 100vh;
+    min-height: 120vh;
 }
 
 /* Centering the form */
@@ -19,6 +20,8 @@
 .form-box {
     background: white;
     padding: 25px;
+    position: relative;
+    bottom: 3em;
     width: 100%;
     max-width: 500px;
     border-radius: 10px;
@@ -37,7 +40,7 @@ h2 {
 .description {
     font-size: 20px;
     color: #f1f1f1;
-    margin-bottom: 15px;
+    margin-bottom: 4em;
 }
 
 /* Form Group */
@@ -98,3 +101,9 @@ h2 {
 }
 
 /* Responsive Design */
+
+@media (max-width:430px) {
+    .form-box{
+        width: 80%;
+    }
+}

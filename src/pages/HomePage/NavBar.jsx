@@ -1,38 +1,3 @@
-// import React from "react";
-// import { Row, Col, Button } from "reactstrap";
-
-// const NavBar = () => {
-//   return (
-//     <>
-//       <Row className="d-flex flexx-row justify-content-between">
-//         <Col md={2}>
-//           <img
-//             src={`${process.env.PUBLIC_URL}/assets/Images/HomeCardsImages/Fairnet-Logo-Final.svg`}
-//             alt="Logo"
-//             height="40px"
-//             width="200px"
-//           ></img>
-//         </Col>
-
-//         <Col md={5} className="d-flex flex-row justify-content-center">
-//           <Col md={2}>Home</Col>
-//           <Col md={2}>About Us</Col>
-//           <Col md={2}>Product</Col>
-//           <Col md={2}>Contact</Col>
-//           <Col md={2}>FAQ</Col>
-//         </Col>
-//         <Col md={5}>
-//           <Button>LogIn</Button>
-//           <Button>Register</Button>
-//         </Col>
-//       </Row>
-//     </>
-//   );
-// };
-
-// export default NavBar;
-
-
 import React, { useState } from "react";
 import { Container, Row, Col, Button } from "reactstrap";
 import { FaBars, FaTimes } from "react-icons/fa";
@@ -54,8 +19,8 @@ const NavBar = () => {
             />
           </Col>
 
-          {/* Center - Navigation (Hidden on mobile) */}
-          <Col md={6} className="d-none d-md-flex justify-content-center gap-3">
+          {/* Center - Navigation (Hidden on mobile & tablet) */}
+          <Col lg={6} className="d-none d-lg-flex justify-content-center text-white gap-3">
             <span className="nav-link">Home</span>
             <span className="nav-link">About Us</span>
             <span className="nav-link">Product</span>
@@ -65,13 +30,14 @@ const NavBar = () => {
 
           {/* Right - Buttons & Hamburger */}
           <Col xs={6} md={3} className="d-flex justify-content-end">
-            <div className="d-none d-md-block">
-              <Button color="light" className="me-2 px-3">Log In</Button>
-              <Button color="success" className="px-3 rounded-4">Register</Button>
+            {/* Buttons (Show only on large screens and above) */}
+            <div className="d-none d-lg-flex">
+              <Button  className="me-2 px-3 border-0 bg-transparent text-white">Log In</Button>
+              <Button className="px-3 rounded-5" style={{background:"#77C476"}}>Register</Button>
             </div>
 
-            {/* Hamburger Menu for Mobile */}
-            <div className="d-md-none">
+            {/* Hamburger Menu for Mobile & Tablet */}
+            <div className="d-flex d-lg-none">
               <Button className="menu-button" onClick={() => setMenuOpen(!menuOpen)}>
                 {menuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
               </Button>

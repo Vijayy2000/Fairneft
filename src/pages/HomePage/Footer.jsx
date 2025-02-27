@@ -46,8 +46,8 @@ const Footer = () => {
       </Col>
 
       {/* Copyright Text */}
-      <Col xs={12} className="text-start mt-3">
-        <p className="m-0 text-muted">© 2025 Fairnet. All rights reserved.</p>
+      <Col xs={12} className="text-center mt-3">
+        <p className="m-0 text-muted">© 2025 FairNeft. All rights reserved.</p>
       </Col>
       
     </Row>

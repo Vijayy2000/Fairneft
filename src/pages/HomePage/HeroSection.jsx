@@ -12,7 +12,7 @@ const HeroSection = () => {
             <span style={{ color: "#77C476" }}>Financial Companion</span> – Tailored Solutions, Simplified
           </h2>
           <p className="text-muted">
-            Find the perfect loan solutions designed for your needs. Empower your financial future with Fairnet’s trusted support.
+            Find the perfect loan solutions designed for your needs. Empower your financial future with FairNeft’s trusted support.
           </p>
 
           {/* Features List */}
